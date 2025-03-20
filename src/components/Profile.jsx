@@ -47,6 +47,7 @@ const Profile = () => {
                     src={user.profilePicture || defaultProfilePic}
                     alt={`${user.username}'s profile`}
                     className="user-profile-picture"
+                    loading="lazy"
                 />
                 <p><strong>Email:</strong> {user.email}</p>
                 <p><strong>Friends:</strong> {user.friends?.length || 0}</p>

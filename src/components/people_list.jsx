@@ -57,6 +57,7 @@ const PeopleList = () => {
                                 src={user.profilePicture || defaultProfilePic} // Use a fallback image
                                 alt={`${user.username}'s profile`}
                                 className="peoplelist-profile-pic"
+                                loading="lazy"
                             />
                             <span>{user.username}</span>
                             <div className="peoplelist-actions">

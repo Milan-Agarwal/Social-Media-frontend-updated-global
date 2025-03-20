@@ -43,6 +43,7 @@ const FriendsNew = () => {
                                     src={friend.profilePicture || defaultProfilePic} // Use a fallback image
                                     alt={`${friend.username}'s profile`}
                                     className="friend-profile-picture"
+                                    loading="lazy"
                                 />
                                 <span>{friend.username}</span>
                             </div>

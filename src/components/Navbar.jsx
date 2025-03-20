@@ -68,7 +68,7 @@ const Navbar = () => {
             </StyledWrapper3>
 
             <StyledWrapper4>
-                <button onClick={() => navigate("/signup")}>
+                <button onClick={() => navigate("/")}>
                     <span>Signup</span>
                 </button>
             </StyledWrapper4>

@@ -5,6 +5,7 @@ import "./feed.css"; // Add CSS for styling
 import moment from "moment";
 import Navbar from "./Navbar";
 import styled from 'styled-components';
+import defaultProfilePic from "../assets/default-profile-account-unknown-icon-black-silhouette-free-vector.jpg";  // Adjust path if needed
 const Feed = () => {
     const userId = localStorage.getItem("userId");
     const [user, setUser] = useState(null); // State for user profile
@@ -153,9 +154,10 @@ const Feed = () => {
                     {user && (
                         <div className="feed-profile-section">
                             <img
-                                src={user.profilePicture || "https://via.placeholder.com/150"}
+                                src={user.profilePicture || defaultProfilePic}
                                 alt="Profile"
                                 className="feed-profile-picture centered-image"
+                                loading="lazy"
                             />
                             <h3>{user.username}</h3>
                             <p>{user.email}</p>
@@ -209,7 +211,14 @@ const Feed = () => {
                             <h4>Username:{post.userId?.username || "Unknown User"}</h4>
                             <p>Post:{post.content}</p>
                             <p className="feed-post-date">Posted on: {formattedDate}</p>
-                            {post.image && <img src={post.image} alt="Post" className="feed-post-image" />}
+                            {post.image && (
+                                <img
+                                    src={post.image}
+                                    alt="Post"
+                                    className="feed-post-image"
+                                    loading="lazy"
+                                />
+                            )}
                             <button
                                 className={isLiked ? "feed-liked" : "feed-not-liked"} // Add "feed-not-liked" class
                                 onClick={() => handleLike(post._id)}
