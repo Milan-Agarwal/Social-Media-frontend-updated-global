@@ -13,7 +13,7 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post("http://localhost:5000/login", formData);
+            const res = await axios.post("https://social-media-backend-5qs2.onrender.com/login", formData);
             localStorage.setItem("token", res.data.token); // Store token
             localStorage.setItem("userId", res.data.user._id); // Store userid data
             localStorage.setItem("user", JSON.stringify(res.data.user)); // Store user data

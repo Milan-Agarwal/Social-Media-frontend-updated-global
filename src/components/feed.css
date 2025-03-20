@@ -3,9 +3,12 @@
     display: flex;
     flex-direction: row;
     gap: 20px;
-    padding: 20px;
+    padding: 10px;
     background: linear-gradient(135deg, #f4f4f9, #e8e8f0);
     font-family: 'Arial', sans-serif;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: auto;
 }
 
 .feed-sidebar {
@@ -50,7 +53,9 @@
 }
 
 .feed-main {
-    width: 75%;
+    width: 85%; /* Increase width to 85% */
+    margin: 0 auto;
+    padding: 10px;
 }
 
 .feed-header {

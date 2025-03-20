@@ -12,7 +12,7 @@ const FriendsNew = () => {
     useEffect(() => {
         const fetchFriends = async () => {
             try {
-                const res = await axios.get(`http://localhost:5000/user/${userId}/friends`);
+                const res = await axios.get(`https://social-media-backend-5qs2.onrender.com/user/${userId}/friends`);
                 setFriends(res.data);
             } catch (err) {
                 console.error("Error fetching friends:", err);

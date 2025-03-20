@@ -15,7 +15,7 @@ const Signup = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post("http://localhost:5000/signup", formData);
+            await axios.post("https://social-media-backend-5qs2.onrender.com/signup", formData);
             setSuccess("Signup successful! Redirecting to login page..."); // Set success message
             setError(""); // Clear any previous error
             setTimeout(() => navigate("/login"), 2000); // Delay navigation by 2 seconds

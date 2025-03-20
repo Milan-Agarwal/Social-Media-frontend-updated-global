@@ -17,10 +17,32 @@ const Navbar = () => {
 
     return (
         <nav className="bg-violet-700 text-white p-4 flex justify-between items-center shadow-md fixed top-0 left-0 w-full z-50">
-            <div className="flex items-center gap-2 flex-col">
+            <div className="flex items-center gap-2 flex-col" style={{ marginLeft: '-10px' }}>
                 <img src="/logo.svg" alt="Logo" className="h-8 w-8" />
-                <h1 className="text-lg font-bold">SocialMedia</h1>
+                <h1 className="text-md font-bold">SocialMedia</h1> {/* Reduced font size */}
             </div>
+           
+            <button 
+                style={{
+                    backgroundColor: 'red', /* Set background color to red */
+                    color: 'white', /* Ensure text is visible */
+                    borderRadius: '5px', /* Optional: Add slight rounding */
+                    padding: '0.2rem 1rem', /* Reduced height by adjusting padding */
+                    transition: 'background-color 0.3s ease, transform 0.3s ease' /* Add transition for hover effect */
+                }}
+                onMouseEnter={(e) => {
+                    e.target.style.backgroundColor = 'darkred'; /* Change background color on hover */
+                    e.target.style.transform = 'scale(1.05)'; /* Slightly enlarge the button on hover */
+                }}
+                onMouseLeave={(e) => {
+                    e.target.style.backgroundColor = 'red'; /* Revert background color */
+                    e.target.style.transform = 'scale(1)'; /* Revert size */
+                }}
+                onClick={() => navigate(`/profile/${localStorage.getItem("userId")}`)}
+            >
+                My Profile
+            </button>
+            
             <StyledWrapper2>
                 <button onClick={() => navigate("/feed")}>
                     <span className="span-mother">
@@ -179,6 +201,22 @@ const StyledWrapper = styled.div`
    
   button {
     all: unset;
+    background-color: red; /* Set background color to red */
+    color: white; /* Ensure text is visible */
+    border-radius: 5px; /* Optional: Add slight rounding */
+    padding: 0.4rem 1rem; /* Adjust padding */
+  }
+
+  @media (max-width: 768px) {
+    button {
+      padding: 0.3rem 0.8rem; /* Adjust padding for smaller screens */
+    }
+  }
+
+  @media (min-width: 1200px) {
+    button {
+      padding: 0.8rem 2rem; /* Adjust padding for full window */
+    }
   }
 
   .button {
@@ -329,6 +367,23 @@ const StyledWrapper = styled.div`
       width: max(160%, 7rem); /* Adjusted for smaller screens */
     }
   }
+  .btn-23 {
+    padding: 0.4rem 1rem; /* Further reduced padding */
+    font-size: 0.7rem; /* Smaller font size */
+    border-width: 1px; /* Thinner border */
+  }
+  @media (max-width: 768px) {
+    .btn-23 {
+      padding: 0.3rem 0.8rem; /* Further reduced padding for smaller screens */
+      font-size: 0.6rem; /* Smaller font size for smaller screens */
+    }
+  }
+  @media (min-width: 1200px) {
+    .btn-23 {
+      padding: 0.8rem 2rem; /* Increased padding for full window */
+      font-size: 1rem; /* Larger font size for full window */
+    }
+  }
 `; 
   const StyledWrapper2 = styled.div`
   button {
@@ -431,6 +486,25 @@ const StyledWrapper = styled.div`
       font-size: 0.7rem;
     }
   }
+  button {
+    width: 70px; /* Further reduced width */
+    height: 30px; /* Further reduced height */
+    font-size: 0.7rem; /* Smaller font size */
+  }
+  @media (max-width: 768px) {
+    button {
+      width: 60px; /* Further reduced width for smaller screens */
+      height: 28px; /* Further reduced height for smaller screens */
+      font-size: 0.6rem; /* Smaller font size for smaller screens */
+    }
+  }
+  @media (min-width: 1200px) {
+    button {
+      width: 100px; /* Increased width for full window */
+      height: 40px; /* Increased height for full window */
+      font-size: 1rem; /* Larger font size for full window */
+    }
+  }
 `;
   const StyledWrapper3 = styled.div`
   .Btn {
@@ -512,6 +586,40 @@ const StyledWrapper = styled.div`
       font-size: 1rem;
     }
   }
+  .Btn {
+    width: 35px; /* Further reduced width */
+    height: 35px; /* Further reduced height */
+  }
+  .Btn:hover {
+    width: 90px; /* Adjusted hover width */
+  }
+  .text {
+    font-size: 0.9rem; /* Slightly smaller font size */
+  }
+  @media (max-width: 768px) {
+    .Btn {
+      width: 30px; /* Further reduced width for smaller screens */
+      height: 30px; /* Further reduced height for smaller screens */
+    }
+    .Btn:hover {
+      width: 80px; /* Adjusted hover width for smaller screens */
+    }
+    .text {
+      font-size: 0.8rem; /* Smaller font size for smaller screens */
+    }
+  }
+  @media (min-width: 1200px) {
+    .Btn {
+      width: 50px; /* Increased width for full window */
+      height: 50px; /* Increased height for full window */
+    }
+    .Btn:hover {
+      width: 120px; /* Adjusted hover width for full window */
+    }
+    .text {
+      font-size: 1.2rem; /* Larger font size for full window */
+    }
+  }
 `;
 
   const StyledWrapper4 = styled.div`
@@ -571,6 +679,22 @@ const StyledWrapper = styled.div`
     button {
       padding: 0.7rem 1.5rem;
       font-size: 0.9rem;
+    }
+  }
+  button {
+    padding: 0.6rem 1.2rem; /* Further reduced padding */
+    font-size: 0.8rem; /* Smaller font size */
+  }
+  @media (max-width: 768px) {
+    button {
+      padding: 0.5rem 1rem; /* Further reduced padding for smaller screens */
+      font-size: 0.7rem; /* Smaller font size for smaller screens */
+    }
+  }
+  @media (min-width: 1200px) {
+    button {
+      padding: 1rem 2rem; /* Increased padding for full window */
+      font-size: 1.2rem; /* Larger font size for full window */
     }
   }
 `;

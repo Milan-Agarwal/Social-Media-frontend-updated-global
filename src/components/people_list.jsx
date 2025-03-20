@@ -17,7 +17,7 @@ const PeopleList = () => {
     useEffect(() => {
         const fetchUsers = async () => {
             try {
-                const res = await axios.get("http://localhost:5000/users", {
+                const res = await axios.get("https://social-media-backend-5qs2.onrender.com/users", {
                     params: { userId }, // Pass the logged-in user's ID as a query parameter
                 });
                 setUsers(res.data);
@@ -31,7 +31,7 @@ const PeopleList = () => {
     // Handle Add Friend
     const handleAddFriend = async (friendId) => {
         try {
-            await axios.post("http://localhost:5000/add-friend", { userId, friendId });
+            await axios.post("https://social-media-backend-5qs2.onrender.com/add-friend", { userId, friendId });
             setFriends(new Set([...friends, friendId])); // Update UI
         } catch (err) {
             console.error("Error adding friend:", err);
