@@ -1,0 +1,204 @@
+.feed-container {
+    margin-top: 4rem; /* Adjust to match the navbar height */
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 20px;
+    background: linear-gradient(135deg, #f4f4f9, #e8e8f0);
+    font-family: 'Arial', sans-serif;
+}
+
+.feed-sidebar {
+    width: 25%;
+    background: linear-gradient(135deg, #ffffff, #f9f9f9);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.feed-profile-section {
+    text-align: center;
+}
+
+.feed-profile-picture {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 4px solid #6a11cb;
+    transition: transform 0.3s ease;
+}
+
+.feed-profile-picture:hover {
+    transform: scale(1.1);
+}
+
+.feed-view-profile-button {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.feed-view-profile-button:hover {
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+    transform: scale(1.05);
+}
+
+.feed-main {
+    width: 75%;
+}
+
+.feed-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #f0f8ff, #dbe9f4); /* Light bluish background */
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.feed-header button {
+    background: linear-gradient(135deg, #1e90ff, #4682b4); /* Bluish gradient */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s ease, transform 0.3s ease;
+    margin-right: 15px; /* Add spacing between buttons */
+}
+
+.feed-header button:hover {
+    background: linear-gradient(135deg, #4682b4, #1e90ff); /* Reverse gradient on hover */
+    transform: scale(1.05);
+}
+
+.feed-create-post {
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #ffffff, #f9f9f9);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.feed-create-post textarea,
+.feed-create-post input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    background: #f4f4f9;
+    transition: border-color 0.3s ease;
+}
+
+.feed-create-post textarea:focus,
+.feed-create-post input:focus {
+    border-color: #6a11cb;
+    outline: none;
+}
+
+.feed-create-post button {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #ff7f50, #ff4500);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.feed-create-post button:hover {
+    background: linear-gradient(135deg, #ff4500, #ff7f50);
+    transform: scale(1.05);
+}
+
+.feed-post {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #ffffff, #f9f9f9);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.feed-post:hover {
+    transform: scale(1.02);
+}
+
+.feed-post-image {
+    max-width: 100%;
+    border-radius: 12px;
+    margin-top: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.feed-post-date {
+    font-size: 12px;
+    color: #888;
+    margin-top: 5px;
+}
+
+.feed-liked {
+    background: linear-gradient(135deg, #8a2be2, #6a0dad); /* Violet gradient */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: transform 0.3s ease;
+}
+
+.feed-liked:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #6a0dad, #8a2be2); /* Reverse gradient on hover */
+}
+
+.feed-not-liked {
+    background: linear-gradient(135deg, #ff69b4, #ff1493); /* Pink gradient */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: transform 0.3s ease;
+}
+
+.feed-not-liked:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #ff1493, #ff69b4); /* Reverse gradient on hover */
+}
+
+.feed-delete-button {
+    background: linear-gradient(135deg, #ff6b6b, #ff4c4c);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+}
+
+.feed-delete-button:hover {
+    transform: scale(1.05);
+}
+
+.centered-image {
+    display: block;
+    margin: 0 auto;
+}

@@ -1,0 +1,95 @@
+.navbar {
+    background-color: #78249a;
+    padding: 10px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Center items vertically */
+}
+
+.navbar-friends-list {
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    width: 250px;
+}
+
+.navbar-friends-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.navbar-friends-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    border-bottom: 1px solid #ddd;
+}
+
+.navbar-friend-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.navbar-view-profile-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.navbar-view-profile-btn:hover {
+    background-color: #218838;
+}
+
+.feed-logout-button {
+    background-color: #dc3545;
+    color: white;
+    padding: 5px 10px; /* Reduced padding */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    height: 35px; /* Set a consistent height */
+}
+
+.feed-logout-button:hover {
+    background-color: #c82333;
+}
+
+.navbar-buttons {
+    display: flex;
+    gap: 10px; /* Add spacing between buttons */
+    margin: 0 auto; /* Center the buttons horizontally */
+}
+
+.navbar-external-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin: 10px 20px;
+}
+
+.external-button {
+    background-color: #6a11cb;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.external-button:hover {
+    background-color: #2575fc;
+}
