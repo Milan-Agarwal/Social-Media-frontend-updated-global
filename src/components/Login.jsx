@@ -6,6 +6,7 @@ import styled from 'styled-components';
 const Login = () => {
     const [formData, setFormData] = useState({ email: "", password: "" });
     const [error, setError] = useState("");
+    const [success, setSuccess] = useState(""); // State for success message
     const navigate = useNavigate();
 
     const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -17,9 +18,12 @@ const Login = () => {
             localStorage.setItem("token", res.data.token); // Store token
             localStorage.setItem("userId", res.data.user._id); // Store userid data
             localStorage.setItem("user", JSON.stringify(res.data.user)); // Store user data
-            navigate("/Feed"); // Redirect to feed page
+            setSuccess("Login successful! Redirecting to feed..."); // Set success message
+            setError(""); // Clear any previous error
+            setTimeout(() => navigate("/Feed"), 2000); // Redirect after 2 seconds
         } catch (err) { 
             setError(err.response?.data?.error || "Invalid Credentials");
+            setSuccess(""); // Clear success message
         }
     };
 
@@ -55,6 +59,8 @@ const Login = () => {
           />
         </div>
         <button id="button" type="submit">Submit</button>
+        {error && <p className="errorMessage">{error}</p>} {/* Display error message */}
+        {success && <p className="successMessage">{success}</p>} {/* Display success message */}
         <div className="signupContainer">
           <p>Don't have any account?</p>
           <Link to="/">Sign up</Link> {/* Updated to use Link for navigation */}
@@ -138,6 +144,12 @@ const StyledWrapper = styled.div`
     margin: 10px;
     cursor: pointer;
     overflow: hidden;
+    transition: background-color 0.3s ease; /* Smooth transition for color change */
+  }
+
+  #button:active {
+    background-color: #5a00b3; /* Darker shade of purple */
+    border-color: #5a00b3;
   }
 
   #button::after {
@@ -182,6 +194,21 @@ const StyledWrapper = styled.div`
     text-decoration: none;
     padding: 8px 15px;
     border-radius: 20px;
-  }`;
+  }
+
+  .errorMessage {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .successMessage {
+    color: green;
+    font-size: 0.9em;
+    margin-top: 10px;
+    text-align: center;
+  }
+`;
 
 export default Login;

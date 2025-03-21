@@ -16,84 +16,85 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="bg-violet-700 text-white p-4 flex justify-between items-center shadow-md fixed top-0 left-0 w-full z-50">
-            <div className="flex items-center gap-2 flex-col" style={{ marginLeft: '-10px' }}>
-                <img src="/logo.svg" alt="Logo" className="h-8 w-8" />
-                <h1 className="text-md font-bold">SocialMedia</h1> {/* Reduced font size */}
+        <nav className="bg-violet-700 text-white p-2 flex flex-col items-center shadow-md fixed top-0 left-0 w-full z-50">
+            <div className="flex items-center gap-2 mb-1">
+                <img src="/logo.svg" alt="Logo" className="h-6 w-6" />
+                <h1 className="text-sm font-bold">SocialMedia</h1>
             </div>
-           
-            <button 
-                style={{
-                    backgroundColor: 'red', /* Set background color to red */
-                    color: 'white', /* Ensure text is visible */
-                    borderRadius: '5px', /* Optional: Add slight rounding */
-                    padding: '0.2rem 1rem', /* Reduced height by adjusting padding */
-                    transition: 'background-color 0.3s ease, transform 0.3s ease' /* Add transition for hover effect */
-                }}
-                onMouseEnter={(e) => {
-                    e.target.style.backgroundColor = 'darkred'; /* Change background color on hover */
-                    e.target.style.transform = 'scale(1.05)'; /* Slightly enlarge the button on hover */
-                }}
-                onMouseLeave={(e) => {
-                    e.target.style.backgroundColor = 'red'; /* Revert background color */
-                    e.target.style.transform = 'scale(1)'; /* Revert size */
-                }}
-                onClick={() => navigate(`/profile/${localStorage.getItem("userId")}`)}
-            >
-                My Profile
-            </button>
-            
-            <StyledWrapper2>
-                <button onClick={() => navigate("/feed")}>
-                    <span className="span-mother">
-                        <span>H</span>
-                        <span>o</span>
-                        <span>m</span>
-                        <span>e</span>
-                    </span>
-                    <span className="span-mother2">
-                        <span>H</span>
-                        <span>o</span>
-                        <span>m</span>
-                        <span>e</span>
-                    </span>
+            <div className="flex justify-between items-center w-full">
+                <button 
+                    style={{
+                        backgroundColor: 'red', /* Set background color to red */
+                        color: 'white', /* Ensure text is visible */
+                        borderRadius: '5px', /* Optional: Add slight rounding */
+                        padding: '0.2rem 1rem', /* Reduced height by adjusting padding */
+                        transition: 'background-color 0.3s ease, transform 0.3s ease' /* Add transition for hover effect */
+                    }}
+                    onMouseEnter={(e) => {
+                        e.target.style.backgroundColor = 'darkred'; /* Change background color on hover */
+                        e.target.style.transform = 'scale(1.05)'; /* Slightly enlarge the button on hover */
+                    }}
+                    onMouseLeave={(e) => {
+                        e.target.style.backgroundColor = 'red'; /* Revert background color */
+                        e.target.style.transform = 'scale(1)'; /* Revert size */
+                    }}
+                    onClick={() => navigate(`/profile/${localStorage.getItem("userId")}`)}
+                >
+                    My Profile
                 </button>
-            </StyledWrapper2>
-
-            <StyledWrapper>
-                <button className="btn-23" onClick={() => navigate("/Friends")}>
-                    <span className="text">Friends</span>
-                    <span aria-hidden className="marquee">Friends</span>
-                </button>
-            </StyledWrapper>
-
-            <StyledWrapper>
-                <button className="button button-item" onClick={() => navigate("/peoplelist")}>
-                    <span className="button-bg">
-                        <span className="button-bg-layers">
-                            <span className="button-bg-layer button-bg-layer-1 -purple" />
-                            <span className="button-bg-layer button-bg-layer-2 -turquoise" />
-                            <span className="button-bg-layer button-bg-layer-3 -yellow" />
+                
+                <StyledWrapper2>
+                    <button onClick={() => navigate("/feed")}>
+                        <span className="span-mother">
+                            <span>H</span>
+                            <span>o</span>
+                            <span>m</span>
+                            <span>e</span>
                         </span>
-                    </span>
-                    <span className="button-inner">
-                        <span className="button-inner-static">People</span>
-                        <span className="button-inner-hover">People</span>
-                    </span>
-                </button>
-            </StyledWrapper>
+                        <span className="span-mother2">
+                            <span>H</span>
+                            <span>o</span>
+                            <span>m</span>
+                            <span>e</span>
+                        </span>
+                    </button>
+                </StyledWrapper2>
 
-            <StyledWrapper3>
-                <button className="Btn" onClick={handleLogout}>
-                    <div className="sign"><svg viewBox="0 0 512 512"><path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z" /></svg></div>        <div className="text">Logout</div>
-                </button>
-            </StyledWrapper3>
+                <StyledWrapper>
+                    <button className="btn-23" onClick={() => navigate("/Friends")}>
+                        <span className="text">Friends</span>
+                        <span aria-hidden className="marquee">Friends</span>
+                    </button>
+                </StyledWrapper>
 
-            <StyledWrapper4>
-                <button onClick={() => navigate("/")}>
-                    <span>Signup</span>
-                </button>
-            </StyledWrapper4>
+                <StyledWrapper>
+                    <button className="button button-item" onClick={() => navigate("/peoplelist")}>
+                        <span className="button-bg">
+                            <span className="button-bg-layers">
+                                <span className="button-bg-layer button-bg-layer-1 -purple" />
+                                <span className="button-bg-layer button-bg-layer-2 -turquoise" />
+                                <span className="button-bg-layer button-bg-layer-3 -yellow" />
+                            </span>
+                        </span>
+                        <span className="button-inner">
+                            <span className="button-inner-static">People</span>
+                            <span className="button-inner-hover">People</span>
+                        </span>
+                    </button>
+                </StyledWrapper>
+
+                <StyledWrapper3>
+                    <button className="Btn" onClick={handleLogout}>
+                        <div className="sign"><svg viewBox="0 0 512 512"><path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z" /></svg></div>        <div className="text">Logout</div>
+                    </button>
+                </StyledWrapper3>
+
+                <StyledWrapper4>
+                    <button onClick={() => navigate("/")}>
+                        <span>Signup</span>
+                    </button>
+                </StyledWrapper4>
+            </div>
         </nav>
     );
 };
